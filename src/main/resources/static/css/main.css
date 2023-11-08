@@ -1,0 +1,76 @@
+@import url("reset-css.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    --clr-grey-dark-text: #2c383b;
+    --clr-grey-light-text: #999999;
+    --clr-grey-light: #ececec;
+    --clr-grey-dark: #333333;
+    --clr-white: #fff;
+    --clr-orange: #e24e2a;
+    --clr-green: #1b9772;
+
+    --header-height: 126px;
+}
+
+body {
+    font-family: Helvetica, Roboto, sans-serif;
+}
+
+/*------HEADER------*/
+
+.header {
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2.5rem;
+    background-color: var(--clr-white);
+}
+
+.header .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.header .logo .main {
+    font-size: 48px;
+    font-weight: bold;
+    color: #2c383b;
+}
+
+.header .divider {
+    /*border-left: 2px solid lightgray;*/
+    width: 2px;
+    background-color: var(--clr-grey-light-text);
+    height: 50px;
+}
+
+.header .nav .nav-list {
+    display: flex;
+    gap: 2px;
+}
+
+.header .nav .nav-item {
+    background-color: var(--clr-grey-light);
+    color: var(--clr-grey-dark);
+    padding: 1.5rem 2.5rem;
+    font-size: 20px;
+}
+
+.header .nav .nav-item.active {
+    background-color: var(--clr-orange);
+    color: var(--clr-white);
+}
+
+.header .nav .nav-item .nav-link {
+    text-decoration: none;
+    color: inherit;
+    letter-spacing: 0.05rem;
+}

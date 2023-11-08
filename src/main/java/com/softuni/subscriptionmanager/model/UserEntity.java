@@ -2,6 +2,8 @@ package com.softuni.subscriptionmanager.model;
 
 import jakarta.persistence.*;
 
+import javax.management.relation.Role;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -10,13 +12,16 @@ public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false)
     private String username;
+    @Column(nullable = false)
     private String password;
+    @Column(nullable = false)
     private String email;
     @ManyToMany
     private List<SubscriptionEntity> subscriptions;
-    @ManyToOne
-    private RoleEntity role;
+    @ManyToMany(fetch = FetchType.EAGER)
+    private List<RoleEntity> userRoles = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -63,12 +68,12 @@ public class UserEntity {
         return this;
     }
 
-    public RoleEntity getRole() {
-        return role;
+    public List<RoleEntity> getUserRoles() {
+        return userRoles;
     }
 
-    public UserEntity setRole(RoleEntity role) {
-        this.role = role;
+    public UserEntity setUserRoles(List<RoleEntity> userRoles) {
+        this.userRoles = userRoles;
         return this;
     }
 }
