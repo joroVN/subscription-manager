@@ -8,6 +8,7 @@
     --clr-grey-light: #ececec;
     --clr-grey-dark: #333333;
     --clr-white: #fff;
+    --clr-paper-like: #fef9f2;
     --clr-orange: #e24e2a;
     --clr-green: #1b9772;
 
@@ -16,20 +17,20 @@
 
 body {
     font-family: Helvetica, Roboto, sans-serif;
+    background-color: var(--clr-paper-like);
 }
 
 /*------HEADER------*/
 
 .header {
     position: sticky;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 2.5rem;
-    background-color: var(--clr-white);
 }
 
 .header .logo {
@@ -42,7 +43,8 @@ body {
 .header .logo .main {
     font-size: 48px;
     font-weight: bold;
-    color: #2c383b;
+    color: var(--clr-grey-dark-text);
+    text-decoration: none;
 }
 
 .header .divider {
@@ -54,7 +56,7 @@ body {
 
 .header .nav .nav-list {
     display: flex;
-    gap: 2px;
+    gap: 5px;
 }
 
 .header .nav .nav-item {
@@ -62,6 +64,10 @@ body {
     color: var(--clr-grey-dark);
     padding: 1.5rem 2.5rem;
     font-size: 20px;
+}
+
+.header .nav .nav-item:hover {
+    background-color: #8d8d8d;
 }
 
 .header .nav .nav-item.active {
@@ -73,4 +79,37 @@ body {
     text-decoration: none;
     color: inherit;
     letter-spacing: 0.05rem;
+}
+
+/*------REGISTER------*/
+
+.register-container{
+    margin: 0 auto;
+    width: 100%;
+}
+
+.register-container form {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.form-group {
+    display: block;
+    width: 20%;
+    background-color: transparent;
+    padding: 7px 10px;
+    margin-bottom: 2px;
+}
+
+.form-control {
+    display: block;
+    background-color: transparent;
+    border-radius: 0;
+    border: solid 1px;
+    padding: 5px 7px;
+    outline: none;
 }

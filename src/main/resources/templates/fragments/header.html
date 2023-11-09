@@ -1,9 +1,9 @@
 <header class="header"
         xmlns:th="http://www.thymeleaf.org">
     <div class="logo">
-        <span class="main">WIREWORK</span>
+        <a class="main" th:href="@{/}">REMINDME</a>
         <span class="divider"></span>
-        <span class="sub">BY TEMPLATED</span>
+        <span class="sub">THE ULTIMATE SUBSCRIPTIONS MANAGER</span>
     </div>
     <nav class="nav">
         <ul class="nav-list" role="list">
@@ -20,7 +20,9 @@
                 <a th:href="@{/users/profile}" class="nav-link">PROFILE</a>
             </li>
             <li class="nav-item">
-                <a th:href="@{/users/logout}" class="nav-link">LOGOUT</a>
+                <form th:action="@{/users/logout}" th:method="post">
+                    <input class="nav-link" type="submit" value="Logout">
+                </form>
             </li>
         </ul>
     </nav>
