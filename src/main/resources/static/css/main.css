@@ -81,6 +81,18 @@ body {
     letter-spacing: 0.05rem;
 }
 
+.nav-logout-container {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logout-input {
+    background-color: transparent;
+    border: none;
+    padding: 5px 7px;
+    outline: none;
+}
+
 /*------REGISTER------*/
 
 .register-container{
