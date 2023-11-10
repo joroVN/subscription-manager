@@ -47,4 +47,9 @@ public class UserRegisterController {
         return "redirect:/";
     }
 
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
+
 }

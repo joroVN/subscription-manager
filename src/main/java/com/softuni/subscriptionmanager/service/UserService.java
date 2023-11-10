@@ -34,8 +34,9 @@ public class UserService {
         login(newUser);
     }
 
-    private void login(UserEntity userEntity) {
-        UserDetails userDetails = userDetailsService.loadUserByUsername(userEntity.getEmail());
+    private void login(UserEntity user) {
+        // TODO: Fix for SpringSecurity 6
+        UserDetails userDetails = userDetailsService.loadUserByUsername(user.getUsername());
 
         Authentication auth = new UsernamePasswordAuthenticationToken(
                 userDetails,
